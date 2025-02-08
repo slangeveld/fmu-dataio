@@ -28,6 +28,9 @@ jobs:
           pip install pip -U
           pip install -e .[dev]
 
+          # Reinstall pydantic to force latest version
+          pip install -U pydantic
+
       - name: Install fmu-sumo-uploader for Python 3.8
         if: matrix.python-version == '3.8'
         run:
